@@ -41,6 +41,11 @@ body {
      margin-top: -30px;
 }
 
+iframe{
+        width: 100%;
+        border: 2px solid #ccc;
+    }
+
 a {
      color: #1f1f1f;
      text-decoration: none !important;

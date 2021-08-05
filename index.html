@@ -30,6 +30,21 @@
       <link rel="stylesheet" type="text/css" href="css/style.css">
       <link rel="stylesheet" href="css/carousel.css">
       <script src="js/carousel.js"></script>
+      <script>
+         var calcHeight = function() {
+           $('#preview-frame').height($(window).height());
+         }
+
+         $(document).ready(function() {
+           calcHeight();
+         });
+
+         $(window).resize(function() {
+           calcHeight();
+         }).load(function() {
+           calcHeight();
+         });
+      </script>
    </head>
    <!-- body -->
    <body>
@@ -70,9 +85,17 @@
       <!-- end header end -->
       <!--banner start -->
       <a href="https://chat.greetinghub.net"><h1 style="text-align: center; font-family: 'Merienda One', cursive;" class="link-text">CLICK HERE TO JOIN FULL SCREEN ROOM</h1></a>
-      <div class="embed-responsive embed-responsive-16by9 mb-5">
-         <iframe class="embed-responsive-item" src="https://chat.greetinghub.net" allowfullscreen></iframe>
-      </div>
+      <iframe src="https://chat.greetinghub.net" id="myIframe"></iframe>
+
+      <script>
+      // Selecting the iframe element
+      var iframe = document.getElementById("myIframe");
+
+      // Adjusting the iframe height onload event
+      iframe.onload = function(){
+          iframe.style.height = 600 + 'px';
+      }
+      </script>
       <!--banner end -->
       <!--services start -->
       <div class="services_main mt-5" id="about">
